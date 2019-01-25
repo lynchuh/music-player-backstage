@@ -1,0 +1,16 @@
+{
+  "name": "music-player-backstage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "node server/index.js 8888",
+    "start:client": "http-server -c-1",
+    "start": "npm-run-all --parallel start:**"
+  },
+  "dependencies": {
+    "qiniu": "^7.2.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

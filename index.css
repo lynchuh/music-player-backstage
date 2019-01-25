@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Helvetica, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, Arial,
+    sans-serif;
+  font-size: 12px;
+  color: blanchedalmond;
+}
+
+*::after {
+  box-sizing: border-box;
+}
+
+*::before {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  outline: none;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px blanchedalmond inset;
+  -webkit-box-shadow: 0 0 0px 1000px blanchedalmond inset;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  /*水平滚动条的样式*/
+  width: 4px;
+  background-color: #cccccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(87, 85, 85, 0.459);
+  /*滚动条的背景颜色*/
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  /*滚动条的圆角宽度*/
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  /*滚动条的宽度*/
+  height: 8px;
+  /*滚动条的高度*/
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  /*垂直滚动条的样式*/
+  height: 50px;
+  background-color: #999;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  outline: 1px solid rgba(70, 69, 69, 0.8);
+  outline-offset: -2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /*滚动条的hover样式*/
+  height: 50px;
+  background-color: #9f9f9f;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  background: url(http://public.lynchuh.com/admin-background.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.page::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(87, 85, 85, 0.459);
+}
+
+.page > * {
+  z-index: 1;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 100px;
+  background-color: rgba(87, 85, 85, 0.459);
+  box-shadow: 8px 0 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+aside h1 {
+  padding: 0 8px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  transition: all 0.3s;
+  font-size: 15px;
+  position: relative;
+}
+
+aside h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(70, 69, 69, 0.8);
+  transform: scaleY(0.5);
+}
+
+aside .songlistArea {
+  overflow: auto;
+}
+
+aside .songList li {
+  /* border-bottom: 1px  ; */
+  height: 30px;
+  line-height: 30px;
+  /* margin: 0 8px; */
+  padding-left: 10px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+aside .songList li::after {
+  content: "";
+  display: block;
+  width: 90%;
+  border-bottom: 1px dashed #4d4d4d;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+
+aside h1.active {
+  background-color: rgba(87, 85, 85, 0.459);
+  /* box-shadow:0 2px 40px 0 rgba(233, 129, 129, 0.2); */
+  box-shadow: 0px 0px 40px rgba(233, 128, 130, 0.2);
+}
+
+aside .songList li.active {
+  background-color: rgba(87, 85, 85, 0.459);
+  /* box-shadow:0 4px 10px -2px rgba(233, 129, 129, 0.2); */
+  box-shadow: inset 0px 0px 79px -26px rgba(233, 128, 130, 0.4);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px 20px;
+}
+
+main .uploadArea {
+  box-shadow: 8px 0 40px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  max-height: 350px;
+  width: 80%;
+  padding: 2vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-self: center;
+  flex-grow: 1;
+  margin: 20px 0;
+  min-height: 205px;
+}
+
+main .uploadArea #uploadSong,
+main .uploadArea #uploadCover {
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  width: 80%;
+  flex-grow: 1;
+  padding: 1vw;
+  margin: 1vw;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+
+main .uploadArea #uploadSong p,
+main .uploadArea #uploadCover p {
+  flex: 0;
+  text-align: center;
+}
+
+main .uploadArea #uploadSong button,
+main .uploadArea #uploadCover button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+  width: 20%;
+  min-height: 30px;
+  margin-top: 1.5vw;
+  min-width: 42px;
+}
+
+main .songformArea {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .songformArea h1 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+main .songformArea form {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  padding-top: 28px;
+  flex-direction: column;
+  box-shadow: 8px 0 40px 0 rgba(0, 0, 0, 0.3);
+  min-height: 205px;
+}
+main .songformArea form .row {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+}
+main .songformArea form .row label {
+  display: flex;
+  margin: 10px 36px;
+  width: 100%;
+}
+main .songformArea form .row span {
+  width:55px;
+  padding-right: 10px;
+}
+main .songformArea form .row textarea {
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #ddd;
+
+}
+main .songformArea form .row textarea:focus,
+main .songformArea form .row textarea:active {
+  outline: 0px;
+}
+main .songformArea form .row input {
+  width: 80%;
+}
+main .songformArea form .row button {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.site-loading {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.site-loading.active {
+  visibility: visible;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+.site-loading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #4d4d4d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: loading 1s infinite alternate-reverse linear;
+}
